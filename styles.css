@@ -1,0 +1,89 @@
+body {
+    font-family: 'Century Gothic', sans-serif;
+    font-size: 10pt;
+    color: #043D68;
+    line-height: 1.1;
+    display: flex;
+}
+
+.container {
+    display: flex;
+}
+
+article {
+    flex: 2;
+    padding: 20px;
+}
+
+.column {
+    flex: 1;
+    background-color: #d4ebf2;
+    padding: 20px;
+}
+
+section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 26pt;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 1pt;
+    margin-bottom: 6pt;
+}
+
+h2 {
+    border-top: 2px solid #043D68;
+    padding-bottom: 5px;
+    padding-top: 20px;
+}
+
+h3 {
+    padding-top: 10px;
+}
+
+/* Adjustments to text */
+
+.normal {
+    font-weight: bold;
+    color: #043D68;
+}
+
+.subtitle {
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+    line-height: 1;
+    margin-bottom: 6pt;
+}
+
+.top-line {
+    border-top: none;
+}
+
+.trophy-icon {
+    display: inline-block;
+    color: goldenrod;
+    width: 20px; /* Adjust the size as needed */
+    height: 20px; /* Adjust the size as needed */
+    background: url('trophy-icon.png') no-repeat center center; /* Replace 'trophy-icon.png' with your actual image path */
+    background-size: cover;
+    margin-left: 0px; /* Adjust the spacing between text and icon */
+    margin-bottom: -3px;
+}
+
+/* Adjustments for mobile responsiveness */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .column {
+        flex: none;
+        width: 100%;
+        height: auto;
+    }
+}
