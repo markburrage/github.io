@@ -96,6 +96,13 @@ h3 {
     cursor: pointer;
 }
 
+.headshot {
+    height: 250px;
+    max-width: 50%;
+    float: left;
+    padding-right: 10px;
+}
+
 .column {
     flex: 0 0 100%;
     background-color: #d4ebf2;
@@ -120,11 +127,6 @@ h3 {
     color: #043D68; /* Set the text color */
 }
 
-.burger-menu:hover + .column,
-.column:hover {
-    max-height: 120px; /* Show the menu when the burger menu is hovered or the column is hovered */
-}
-
 .column.show-menu {
     display: grid;
     flex-direction: column;
@@ -135,7 +137,7 @@ h3 {
     background-color: #d4ebf2;
     z-index: 1;
     padding: 10px;
-    max-height: 180px;
+    max-height: 215px;
 }
 
 /* Adjustments for mobile responsiveness */
@@ -160,7 +162,7 @@ h3 {
         background-color: #d4ebf2;
         z-index: 1;
         padding: 10px;
-        max-height: 165px;
+        max-height: 215px;
     }
    
 }
