@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<div class="burger-menu" onmouseover="toggleMenu()" onmouseout="toggleMenu()">☰
+  <div class="burger-menu" onmouseover="toggleMenu()" onmouseout="toggleMenu()">☰
     <div class="column">
         <a href="#Home">Home</a>
         <a href="#Profile">Profile</a>
@@ -19,7 +19,7 @@
         <a href="#Some_Reading">Some Reading</a>
         <a href="#About_Me">About Me</a>
     </div>
-</div>
+</div>  
 
 <body>
     <section class="container">
@@ -370,13 +370,23 @@
         </footer>
 
     </section>
-
+<!--
     <script>
         function toggleMenu() {
             var menu = document.querySelector('.column');
             menu.classList.toggle('show-menu');
         }
     </script>
+-->
+<script>
+    function toggleMenu() {
+        var menu = document.querySelector('.column');
+        setTimeout(function() {
+            menu.classList.toggle('show-menu');
+        }, 250); // Add a delay of 250 milliseconds (0.25 seconds) which stops the menu disappearing
+    }
+</script>
+
 </body>
 
 </html>
