@@ -94,10 +94,12 @@ h3 {
     z-index: 1;
     padding: 20px;
     cursor: pointer;
-}
+    }
 
 .headshot {
     height: 250px;
+    width:228px;
+    min-width: 228px;
     max-width: 50%;
     float: left;
     padding-right: 10px;
