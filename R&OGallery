@@ -84,7 +84,7 @@
                 "attributes": {
                   "class": "ms-fontColor-neutralSecondary sp-card-label"
                 },
-                "txtContent": "[!RisOpp.DisplayName]"
+                "txtContent": "Risk/Opportunity"
               },
               {
                 "elmType": "p",
@@ -107,7 +107,7 @@
                 "attributes": {
                   "class": "ms-fontColor-neutralSecondary sp-card-label"
                 },
-                "txtContent": "[!Severity.DisplayName]"
+                "txtContent": "Severity"
               },
               {
                 "elmType": "p",
@@ -115,7 +115,8 @@
                   "title": "[$Severity]",
                   "class": "ms-fontColor-neutralPrimary sp-card-content "
                 },
-                "txtContent": "=if ([$Severity] == '', '–', [$Severity])"
+                "txtContent": "=if ([$Severity] == '', '–', [$Severity])",
+                "inlineEditField": "[$Severity]"
               }
             ]
           },
@@ -130,7 +131,7 @@
                 "attributes": {
                   "class": "ms-fontColor-neutralSecondary sp-card-label"
                 },
-                "txtContent": "[!Likelihood.DisplayName]"
+                "txtContent": "Likelihood"
               },
               {
                 "elmType": "p",
@@ -138,7 +139,8 @@
                   "title": "[$Likelihood]",
                   "class": "ms-fontColor-neutralPrimary sp-card-content "
                 },
-                "txtContent": "=if ([$Likelihood] == '', '–', [$Likelihood])"
+                "txtContent": "=if ([$Likelihood] == '', '–', [$Likelihood])",
+                "inlineEditField": "[$Likelihood]"
               }
             ]
           },
@@ -153,7 +155,7 @@
                 "attributes": {
                   "class": "ms-fontColor-neutralSecondary sp-card-label"
                 },
-                "txtContent": "[!RisOppTerm.DisplayName]"
+                "txtContent": "Risk/Opportunity Term"
               },
               {
                 "elmType": "div",
@@ -179,7 +181,7 @@
                 "attributes": {
                   "class": "ms-fontColor-neutralSecondary sp-card-label"
                 },
-                "txtContent": "[!Measures.DisplayName]"
+                "txtContent": "Mitigation Measures"
               },
               {
                 "elmType": "div",
@@ -189,7 +191,8 @@
                 "children": [
                   {
                     "elmType": "p",
-                    "txtContent": "=if(length([$Measures]) == 0, '–', '')"
+                    "txtContent": "=if(length([$Measures]) == 0, '–', '')",     
+                    "inlineEditField": "[$Measures]"
                   },
                   {
                     "forEach": "lookupIterator in [$Measures]",
@@ -222,7 +225,7 @@
                 "attributes": {
                   "class": "ms-fontColor-neutralSecondary sp-card-label"
                 },
-                "txtContent": "[!ResSeverity.DisplayName]"
+                "txtContent": "Residual Severity"
               },
               {
                 "elmType": "p",
@@ -230,7 +233,8 @@
                   "title": "[$ResSeverity]",
                   "class": "ms-fontColor-neutralPrimary sp-card-content "
                 },
-                "txtContent": "=if ([$ResSeverity] == '', '–', [$ResSeverity])"
+                "txtContent": "=if ([$ResSeverity] == '', '–', [$ResSeverity])",     
+                "inlineEditField": "[$ResSeverity]"
               }
             ]
           },
@@ -245,7 +249,7 @@
                 "attributes": {
                   "class": "ms-fontColor-neutralSecondary sp-card-label"
                 },
-                "txtContent": "[!ResLikelihood.DisplayName]"
+                "txtContent": "Residual Likelihood"
               },
               {
                 "elmType": "p",
@@ -253,7 +257,8 @@
                   "title": "[$ResLikelihood]",
                   "class": "ms-fontColor-neutralPrimary sp-card-content "
                 },
-                "txtContent": "=if ([$ResLikelihood] == '', '–', [$ResLikelihood])"
+                "txtContent": "=if ([$ResLikelihood] == '', '–', [$ResLikelihood])",     
+                "inlineEditField": "[$ResLikelihood]"
               }
             ]
           },
@@ -268,7 +273,7 @@
                 "attributes": {
                   "class": "ms-fontColor-neutralSecondary sp-card-label"
                 },
-                "txtContent": "[!ResRisOppTerm.DisplayName]"
+                "txtContent": "Residual Risk/Opportunity Term"
               },
               {
                 "elmType": "p",
