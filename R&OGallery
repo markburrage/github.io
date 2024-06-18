@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/sp/v2/tile-formatting.schema.json",
-  "height": 535,
-  "width": 254,
+  "height": 510,
+  "width": 360,
   "hideSelection": false,
   "fillHorizontally": true,
   "formatter": {
@@ -107,64 +107,96 @@
                 "attributes": {
                   "class": "ms-fontColor-neutralSecondary sp-card-label"
                 },
-                "txtContent": "Severity"
+                "txtContent": "Impact/Consequence"
               },
               {
                 "elmType": "p",
                 "attributes": {
-                  "title": "[$Severity]",
+                  "title": "[$Impact]",
                   "class": "ms-fontColor-neutralPrimary sp-card-content "
                 },
-                "txtContent": "=if ([$Severity] == '', '–', [$Severity])",
-                "inlineEditField": "[$Severity]"
+                "txtContent": "=if ([$Impact] == '', '–', [$Impact])"
               }
             ]
           },
           {
             "elmType": "div",
-            "attributes": {
-              "class": "sp-card-displayColumnContainer"
+            "style": {
+              "display": "flex",
+              "justify-content": "space-between"
             },
             "children": [
               {
-                "elmType": "p",
+                "elmType": "div",
                 "attributes": {
-                  "class": "ms-fontColor-neutralSecondary sp-card-label"
+                  "class": "sp-card-displayColumnContainer"
                 },
-                "txtContent": "Likelihood"
-              },
-              {
-                "elmType": "p",
-                "attributes": {
-                  "title": "[$Likelihood]",
-                  "class": "ms-fontColor-neutralPrimary sp-card-content "
-                },
-                "txtContent": "=if ([$Likelihood] == '', '–', [$Likelihood])",
-                "inlineEditField": "[$Likelihood]"
-              }
-            ]
-          },
-          {
-            "elmType": "div",
-            "attributes": {
-              "class": "sp-card-displayColumnContainer"
-            },
-            "children": [
-              {
-                "elmType": "p",
-                "attributes": {
-                  "class": "ms-fontColor-neutralSecondary sp-card-label"
-                },
-                "txtContent": "Risk/Opportunity Term"
+                "children": [
+                  {
+                    "elmType": "p",
+                    "attributes": {
+                      "class": "ms-fontColor-neutralSecondary sp-card-label"
+                    },
+                    "txtContent": "Severity"
+                  },
+                  {
+                    "elmType": "p",
+                    "attributes": {
+                      "title": "[$Severity]",
+                      "class": "ms-fontColor-neutralPrimary sp-card-content "
+                    },
+                    "txtContent": "=if ([$Severity] == '', '–', [$Severity])",
+                    "inlineEditField": "[$Severity]"
+                  }
+                ]
               },
               {
                 "elmType": "div",
                 "attributes": {
-                  "class": "sp-card-content sp-card-formatterRef"
+                  "class": "sp-card-displayColumnContainer"
                 },
                 "children": [
                   {
-                    "columnFormatterReference": "[$RisOppTerm]"
+                    "elmType": "p",
+                    "attributes": {
+                      "class": "ms-fontColor-neutralSecondary sp-card-label"
+                    },
+                    "txtContent": "Likelihood"
+                  },
+                  {
+                    "elmType": "p",
+                    "attributes": {
+                      "title": "[$Likelihood]",
+                      "class": "ms-fontColor-neutralPrimary sp-card-content "
+                    },
+                    "txtContent": "=if ([$Likelihood] == '', '–', [$Likelihood])",
+                    "inlineEditField": "[$Likelihood]"
+                  }
+                ]
+              },
+              {
+                "elmType": "div",
+                "attributes": {
+                  "class": "sp-card-displayColumnContainer"
+                },
+                "children": [
+                  {
+                    "elmType": "p",
+                    "attributes": {
+                      "class": "ms-fontColor-neutralSecondary sp-card-label"
+                    },
+                    "txtContent": "Risk/Opportunity"
+                  },
+                  {
+                    "elmType": "div",
+                    "attributes": {
+                      "class": "sp-card-content sp-card-formatterRef"
+                    },
+                    "children": [
+                      {
+                        "columnFormatterReference": "[$RisOppTerm]"
+                      }
+                    ]
                   }
                 ]
               }
@@ -191,12 +223,19 @@
                 "children": [
                   {
                     "elmType": "p",
-                    "txtContent": "=if(length([$Measures]) == 0, '–', '')",     
+                    "txtContent": "=if(length([$Measures]) == 0, '–', '')"
+                  },
+                                    {
+                    "elmType": "p",
+                    "txtContent": "Click here to edit",
                     "inlineEditField": "[$Measures]"
                   },
                   {
                     "forEach": "lookupIterator in [$Measures]",
                     "elmType": "a",
+                    "style": {
+                      "display": "block"
+                    },
                     "attributes": {
                       "target": "_blank",
                       "class": "ms-fontColor-neutralPrimary sp-card-urlContent sp-card-lookupInlineValues sp-card-keyboard-focusable ",
@@ -206,82 +245,93 @@
                           "&ID=",
                           "[$lookupIterator.lookupId]"
                         ]
-                      }
+                      },
+                      "title": "[$lookupIterator.lookupValue]"
                     },
                     "txtContent": "[$lookupIterator.lookupValue]"
                   }
+
                 ]
               }
             ]
           },
           {
             "elmType": "div",
-            "attributes": {
-              "class": "sp-card-displayColumnContainer"
+            "style": {
+              "display": "flex",
+              "justify-content": "space-between"
             },
             "children": [
               {
-                "elmType": "p",
+                "elmType": "div",
                 "attributes": {
-                  "class": "ms-fontColor-neutralSecondary sp-card-label"
+                  "class": "sp-card-displayColumnContainer"
                 },
-                "txtContent": "Residual Severity"
+                "children": [
+                  {
+                    "elmType": "p",
+                    "attributes": {
+                      "class": "ms-fontColor-neutralSecondary sp-card-label"
+                    },
+                    "txtContent": "Residual Severity"
+                  },
+                  {
+                    "elmType": "p",
+                    "attributes": {
+                      "title": "[$ResSeverity]",
+                      "class": "ms-fontColor-neutralPrimary sp-card-content "
+                    },
+                    "txtContent": "=if ([$ResSeverity] == '', '–', [$ResSeverity])",
+                    "inlineEditField": "[$ResSeverity]"
+                  }
+                ]
               },
               {
-                "elmType": "p",
+                "elmType": "div",
                 "attributes": {
-                  "title": "[$ResSeverity]",
-                  "class": "ms-fontColor-neutralPrimary sp-card-content "
+                  "class": "sp-card-displayColumnContainer"
                 },
-                "txtContent": "=if ([$ResSeverity] == '', '–', [$ResSeverity])",     
-                "inlineEditField": "[$ResSeverity]"
-              }
-            ]
-          },
-          {
-            "elmType": "div",
-            "attributes": {
-              "class": "sp-card-displayColumnContainer"
-            },
-            "children": [
-              {
-                "elmType": "p",
-                "attributes": {
-                  "class": "ms-fontColor-neutralSecondary sp-card-label"
-                },
-                "txtContent": "Residual Likelihood"
+                "children": [
+                  {
+                    "elmType": "p",
+                    "attributes": {
+                      "class": "ms-fontColor-neutralSecondary sp-card-label"
+                    },
+                    "txtContent": "Residual Likelihood"
+                  },
+                  {
+                    "elmType": "p",
+                    "attributes": {
+                      "title": "[$ResLikelihood]",
+                      "class": "ms-fontColor-neutralPrimary sp-card-content "
+                    },
+                    "txtContent": "=if ([$ResLikelihood] == '', '–', [$ResLikelihood])",
+                    "inlineEditField": "[$ResLikelihood]"
+                  }
+                ]
               },
               {
-                "elmType": "p",
+                "elmType": "div",
                 "attributes": {
-                  "title": "[$ResLikelihood]",
-                  "class": "ms-fontColor-neutralPrimary sp-card-content "
+                  "class": "sp-card-lastTextColumnContainer"
                 },
-                "txtContent": "=if ([$ResLikelihood] == '', '–', [$ResLikelihood])",     
-                "inlineEditField": "[$ResLikelihood]"
-              }
-            ]
-          },
-          {
-            "elmType": "div",
-            "attributes": {
-              "class": "sp-card-lastTextColumnContainer"
-            },
-            "children": [
-              {
-                "elmType": "p",
-                "attributes": {
-                  "class": "ms-fontColor-neutralSecondary sp-card-label"
-                },
-                "txtContent": "Residual Risk/Opportunity Term"
-              },
-              {
-                "elmType": "p",
-                "attributes": {
-                  "title": "[$ResRisOppTerm]",
-                  "class": "ms-fontColor-neutralPrimary sp-card-content "
-                },
-                "txtContent": "=if ([$ResRisOppTerm] == '', '–', [$ResRisOppTerm])"
+                "children": [
+                  {
+                    "elmType": "p",
+                    "attributes": {
+                      "class": "ms-fontColor-neutralSecondary sp-card-label"
+                    },
+                    "txtContent": "Residual Risk/Opp"
+                  },
+                  {
+                    "elmType": "p",
+                    "attributes": {
+                      "title": "[$ResRisOppTerm]",
+                      "class": "ms-fontColor-neutralPrimary sp-card-content "
+                    },
+                    "txtContent": "=if ([$ResRisOppTerm] == '', '–', [$ResRisOppTerm])"
+                  }
+                ]
               }
             ]
           }
